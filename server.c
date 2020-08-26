@@ -62,12 +62,14 @@ void data_parse(char data[], int len){
 
 void data_resolve(int* fd){
     int pos;
-    char data[20];
+    unsigned char data[20];
     unsigned int crc;
     unsigned char crch, crcl;
     //没有数据是阻塞的
     while(1){
         pos = recv(*fd, data, MAXLINE, 0);
+
+        printf("数据: %s ,长度: %d", data, pos);
         
         crc = getCRC16(data, pos-2);
         crch = crc >> 8;

@@ -57,7 +57,7 @@ const unsigned char TabL[] = {  //CRC低位字节值表
         0x43, 0x83, 0x41, 0x81, 0x80, 0x40  
     } ;
 
-unsigned int getCRC16(char * data, int len){
+unsigned int getCRC16(unsigned char * data, int len){
     unsigned int  uiIndex;
     unsigned char ucCrch = 0xFF;  		//高CRC字节
     unsigned char ucCrcl = 0xFF;  		//低CRC字节 
